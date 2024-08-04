@@ -1,14 +1,14 @@
 {
-  "index": "Introduction",
-  "another": "Another Page",
-  "advanced": "Advanced (A Folder)",
+  "index": "介绍",
+  "another": "另一个页面",
+  "advanced": "高级（文件夹）",
   "about": {
-    "title": "About",
-    "type": "page"
+    "title": "关于",
+    "type": "页面"
   },
   "contact": {
-    "title": "Contact ↗",
-    "type": "page",
+    "title": "联系 ↗",
+    "type": "页面",
     "href": "https://twitter.com/shuding_",
     "newWindow": true
   }
