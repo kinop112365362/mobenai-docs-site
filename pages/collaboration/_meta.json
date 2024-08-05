@@ -1,0 +1,8 @@
+{
+  "client": "Mo-2 客户端",
+  "relationship": "Mo-2 和基座模型的关系",
+  "retrieval": "检索模式",
+  "instruction": "指令模式",
+  "context-management": "上下文管理",
+  "data": "数据管理"
+}

@@ -14,7 +14,7 @@
     "pages/**/*.json",
     "theme.config.tsx"
   ],
-  "appId": "",
+  "appId": "1816021975325663233",
   "organizationId": 1,
   "ignoreList": [
     "#summary",

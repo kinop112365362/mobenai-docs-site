@@ -1,15 +1,8 @@
 {
   "index": "介绍",
-  "another": "另一个页面",
-  "advanced": "高级（文件夹）",
+  "collaboration": "与 Mo-2 协作",
   "about": {
     "title": "关于",
     "type": "页面"
-  },
-  "contact": {
-    "title": "联系 ↗",
-    "type": "页面",
-    "href": "https://twitter.com/shuding_",
-    "newWindow": true
   }
 }
