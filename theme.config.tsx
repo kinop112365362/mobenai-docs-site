@@ -11,7 +11,7 @@ const config: DocsThemeConfig = {
   // },
   docsRepositoryBase: "https://github.com/shuding/nextra-docs-template",
   footer: {
-    text: "Mo-2 食用指南",
+    text: "Mo AI Studio 看见未来...",
   },
 }
 
