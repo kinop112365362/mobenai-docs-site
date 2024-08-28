@@ -1,8 +1,10 @@
 {
-  "index": "介绍",
-  "collaboration": "与 Mo-2 协作",
+  "index": "简介",
+  "concepts": "核心概念",
+  "roles": "角色",
+  "custom-role": "自定义角色教程",
   "about": {
     "title": "关于",
-    "type": "页面"
+    "type": "page"
   }
 }
