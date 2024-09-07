@@ -1,8 +1,8 @@
 {
   "index": "简介",
   "concepts": "核心概念",
-  "roles": "角色",
-  "custom-role": "自定义角色教程",
+  "agents": "智能体",
+  "custom-agent": "自定义智能体教程",
   "about": {
     "title": "关于",
     "type": "page"
