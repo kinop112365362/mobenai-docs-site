@@ -1,0 +1,177 @@
+# 自定义设置器教程
+
+在 Mo AI Studio 中，设置器（Setter）是一种用于配置和管理变量的重要工具。本教程将帮助你理解设置器的原理，并指导你如何创建自己的自定义设置器。
+
+## 设置器的原理
+
+设置器本质上是一个 React 组件，用于处理特定类型的输入数据。每个设置器都有以下特征：
+
+1. 接收 `value`、`onValueChange`、`label` 等 props
+2. 管理自己的内部状态
+3. 提供用户界面来输入或修改数据
+4. 在数据变化时调用 `onValueChange` 回调
+
+## 现有设置器示例
+
+让我们看一些 Mo AI Studio 中现有的设置器示例：
+
+### 1. TextareaSetter
+
+TextareaSetter 是一个简单的多行文本输入设置器。
+
+```jsx
+import React, { useState } from "react"
+import { Textarea, Button } from "@nextui-org/react"
+import { useTranslation } from "react-i18next"
+
+const TextareaSetter = ({ value, onValueChange, label, ...props }) => {
+  const [localValue, setLocalValue] = useState(value || "")
+  const { t } = useTranslation()
+
+  const handleSave = () => {
+    onValueChange(localValue)
+  }
+
+  return (
+    <div className='space-y-2'>
+      <Textarea label={label} value={localValue} onChange={(e) => setLocalValue(e.target.value)} {...props} />
+      <Button variant='light' size='sm' onPress={handleSave}>
+        {t("save")}
+      </Button>
+    </div>
+  )
+}
+
+export default TextareaSetter
+```
+
+### 2. URLInput
+
+URLInput 是一个用于输入 URL 并获取内容的设置器。
+
+```jsx
+import React, { useState } from "react"
+import { Input, Button, Tooltip } from "@nextui-org/react"
+import { Icon } from "@iconify/react"
+import { useTranslation } from "react-i18next"
+import { message } from "@/components/Message"
+
+const URLInput = ({ value, onValueChange, label, ...props }) => {
+  const [url, setUrl] = useState(value?.url || "")
+  const [content, setContent] = useState(value?.content || "")
+  const [showDeleteButton, setShowDeleteButton] = useState(false)
+  const { t } = useTranslation()
+
+  const handleFetch = async () => {
+    // ... (fetch logic)
+  }
+
+  const handleUrlChange = (newUrl) => {
+    setUrl(newUrl)
+    onValueChange({ url: newUrl, content })
+  }
+
+  const handleDelete = () => {
+    setContent("")
+    setShowDeleteButton(false)
+    onValueChange({ url, content: "" })
+  }
+
+  return (
+    <div className='space-y-2'>
+      <Input
+        endContent={/* ... */}
+        label={label}
+        value={url}
+        onChange={(e) => handleUrlChange(e.target.value)}
+        placeholder={t("enter_url")}
+        {...props}
+      />
+      {/* ... (content display) */}
+    </div>
+  )
+}
+
+export default URLInput
+```
+
+## 创建自定义设置器
+
+现在，让我们创建一个自定义设置器。我们将创建一个 `ColorPicker` 设置器作为示例。
+
+1. 在 `src/pages/mo/setter` 目录下创建一个新文件 `ColorPicker.tsx`：
+
+```jsx
+import React, { useState } from "react"
+import { Input, Button } from "@nextui-org/react"
+import { useTranslation } from "react-i18next"
+
+const ColorPicker = ({ value, onValueChange, label, ...props }) => {
+  const [color, setColor] = useState(value || "#000000")
+  const { t } = useTranslation()
+
+  const handleColorChange = (e) => {
+    setColor(e.target.value)
+    onValueChange(e.target.value)
+  }
+
+  return (
+    <div className='space-y-2'>
+      <Input
+        type="color"
+        label={label}
+        value={color}
+        onChange={handleColorChange}
+        {...props}
+      />
+      <div>
+        {t("selected_color")}: <span style={{ color }}>{color}</span>
+      </div>
+    </div>
+  )
+}
+
+export default ColorPicker
+```
+
+2. 在 `src/pages/mo/setter/index.ts` 文件中导出新的设置器：
+
+```typescript
+export { default as TextareaSetter } from "./TextareaSetter"
+export { default as URLInput } from "./URLInput"
+export { default as DateSetter } from "./DateSetter"
+export { default as FirecrawlSetter } from "./FirecrawlSetter"
+export { default as ColorPicker } from "./ColorPicker"
+```
+
+3. 在 `src/pages/mo/setter/variableSetters.tsx` 文件中添加新的设置器：
+
+```typescript
+import { ColorPicker } from "."
+
+// ... (existing code)
+
+export const variableSetters = {
+  // ... (existing setters)
+  colorPicker: {
+    name: "Color Picker",
+    component: ColorPicker,
+    parse: (value: string) => value,
+  },
+}
+```
+
+现在，你已经成功创建了一个自定义的 ColorPicker 设置器！你可以在智能体配置中使用这个新的设置器，就像使用其他内置设置器一样。
+
+## 最佳实践
+
+创建自定义设置器时，请记住以下最佳实践：
+
+1. 保持组件的单一职责
+2. 处理各种边缘情况和错误情况
+3. 提供清晰的用户反馈
+4. 使用 TypeScript 来增强类型安全
+5. 遵循 React 的最佳实践，如使用 hooks 和函数式组件
+6. 确保设置器是可访问的，支持键盘导航和屏幕阅读器
+
+通过遵循这些原则和示例，你可以为 Mo AI Studio 创建强大而灵活的自定义设置器，以满足你的特定需求。

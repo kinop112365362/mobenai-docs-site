@@ -3,9 +3,9 @@ import { DocsThemeConfig } from "nextra-theme-docs"
 
 const config: DocsThemeConfig = {
   logo: <span>Mobenai</span>,
-  // project: {
-  //   link: "https://github.com/shuding/nextra-docs-template",
-  // },
+  project: {
+    link: "https://github.com/kinop112365362/mo-ai-stuidio",
+  },
   // chat: {
   //   link: "https://discord.com",
   // },

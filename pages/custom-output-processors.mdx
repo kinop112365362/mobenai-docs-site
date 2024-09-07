@@ -1,0 +1,107 @@
+# 自定义输出处理器
+
+输出处理器是 Mo AI Studio 中的一个强大功能，它允许你自定义智能体输出的处理方式。本文将介绍自定义输出处理器的概念、原理和使用方法，并提供实际的代码示例。
+
+## 什么是输出处理器？
+
+输出处理器是一个函数，它接收智能体的原始输出，并对其进行处理或转换。这个功能允许你：
+
+1. 格式化输出
+2. 执行额外的操作（如文件写入、API 调用等）
+3. 根据特定需求修改或增强输出
+
+## 输出处理器的工作原理
+
+输出处理器的基本工作流程如下：
+
+1. 接收智能体的原始输出
+2. 处理或转换输出
+3. 返回处理后的结果
+
+下面是一个简单的流程图来说明这个过程：
+
+```mermaid
+graph LR
+    A[智能体输出] --> B[输出处理器]
+    B --> C[处理逻辑]
+    C --> D[返回结果]
+```
+
+## 自定义输出处理器示例
+
+让我们看一个实际的例子。以下是 Mo AI Studio 中的一个自定义输出处理器示例，它处理文件输出：
+
+```javascript
+fileOutputProcessor: {
+  name: "文件输出处理器",
+  process: async (output: string) => {
+    const fileRegex = /<mo-ai-file path="([^"]+)">([\s\S]*?)<\/mo-ai-file>/g;
+    const results = [];
+    let match;
+
+    while ((match = fileRegex.exec(output)) !== null) {
+      const [, filePath, content] = match;
+      try {
+        // 获取文件的绝对路径
+        const absolutePath = await window.electronAPI.file.getAbsolutePath(filePath);
+        // 写入文件内容
+        await window.electronAPI.file.writeFile(absolutePath, content.trim());
+        console.log(`File written: ${absolutePath}`);
+        results.push({ path: filePath, status: "success" });
+        message.success(`文件 ${filePath} 已成功写入`);
+      } catch (error) {
+        console.error(`Error writing file: ${filePath}`, error);
+        results.push({ path: filePath, status: "error", message: error.message });
+        message.error(`文件 ${filePath} 写入失败: ${error.message}`);
+      }
+    }
+
+    return results;
+  },
+  resultComponent: DevProcessorResult,
+}
+```
+
+这个处理器的工作原理如下：
+
+1. 使用正则表达式查找输出中的特殊标记 `<mo-ai-file>`。
+2. 对于每个匹配的文件，尝试写入文件内容。
+3. 记录每个文件的处理结果（成功或失败）。
+4. 返回处理结果数组。
+
+## 如何使用自定义输出处理器
+
+要使用自定义输出处理器，你需要在创建或配置智能体时指定它。例如：
+
+```javascript
+const myAgent = {
+  // 其他配置...
+  outputProcessor: "fileOutputProcessor",
+  // ...
+};
+```
+
+这样，当智能体生成输出时，它会自动使用指定的处理器来处理输出。
+
+## 创建你自己的输出处理器
+
+你可以根据自己的需求创建自定义输出处理器。以下是创建自定义处理器的基本步骤：
+
+1. 定义一个包含 `name` 和 `process` 函数的对象。
+2. 在 `process` 函数中实现你的处理逻辑。
+3. 可选：添加一个 `resultComponent` 来自定义结果的展示方式。
+
+例如，这里是一个简单的自定义处理器，它将输出转换为大写：
+
+```javascript
+const uppercaseProcessor = {
+  name: "大写处理器",
+  process: (output: string) => {
+    return output.toUpperCase();
+  }
+};
+```
+
+## 结论
+
+自定义输出处理器是 Mo AI Studio 中一个强大而灵活的功能。通过创建自定义处理器，你可以根据特定需求处理和转换智能体的输出，从而增强智能体的功能和适用性。无论是简单的文本转换，还是复杂的文件操作或 API 调用，输出处理器都能帮助你实现。

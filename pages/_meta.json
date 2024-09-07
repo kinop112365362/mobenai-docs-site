@@ -1,10 +1,19 @@
 {
   "index": "简介",
   "concepts": "核心概念",
-  "agents": "智能体",
+  "agents": "智能体 Mo",
   "custom-agent": "自定义智能体教程",
+  "custom-output-processors": "自定义输出处理器",
+  "custom-setters": "自定义设置器教程",
+  "custom-components": "发布自定义的一切",
   "about": {
     "title": "关于",
     "type": "page"
+  },
+  "contact": {
+    "title": "官网 ↗",
+    "type": "page",
+    "href": "https://www.mobenai.com.cn",
+    "newWindow": true
   }
 }
