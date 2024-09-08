@@ -1,7 +1,7 @@
 {
   "index": "简介",
   "concepts": "核心概念",
-  "agents": "智能体",
+  "aiAgents": "智能体",
   "agentsContainer": "智能体容器",
   "custom-components": "发布自定义的一切",
   "about": {

@@ -1,0 +1,79 @@
+# Mo AI Studio Features Explained
+
+Welcome to the feature explanation page of Mo AI Studio! Here, we will delve into Mo AI Studio, this powerful desktop client that not only serves as a running environment for agents but also provides a rich system-level SDK, enabling agents with the ability to operate the system. Let's unveil the mystery of Mo AI Studio and see how it changes the way we interact with AI!
+
+## Mo AI Studio: The Incubator for Agents
+
+Imagine if you had a magical studio where various AI assistants could freely express themselves, what would it be like? Mo AI Studio is just such a magical place! It's a desktop client specially built for AI agents, like a greenhouse for agents, providing them with the best growth environment.
+
+### Agent Running Environment
+
+Mo AI Studio is not just an ordinary application; it's more like a small AI ecosystem. Here, agents like Mo can freely run, interact, and develop. It provides agents with:
+
+1. **Stable Running Platform**: Whether it's simple Q&A or complex task processing, Mo AI Studio ensures smooth operation of agents.
+2. **Resource Management**: Automatically allocates and manages computing resources, allowing agents to perform at their best.
+3. **Secure Sandbox Environment**: Agents can execute operations in a controlled environment, ensuring system security.
+
+## System-level SDK: Empowering Agents with Superpowers
+
+One of the most exciting features of Mo AI Studio is its system-level SDK. This is like equipping agents with a set of super toolboxes, allowing them to interact deeply with the operating system. Let's see what these "superpowers" include:
+
+### File System Operations
+
+Agents can freely browse and read/write the file system, just like human users. For example:
+
+```javascript
+// Read file contents
+const content = await window.electronAPI.file.readFile('/path/to/file.txt');
+
+// Write to file
+await window.electronAPI.file.writeFile('/path/to/newfile.txt', 'Hello, Mo AI Studio!');
+
+// Get directory structure
+const structure = await window.electronAPI.file.getDirectoryStructure('/path/to/directory');
+```
+
+These features allow agents to help users manage files, analyze code structures, and even automatically generate and modify files.
+
+### System Interaction
+
+Mo AI Studio allows agents to interact with the operating system at a deeper level:
+
+```javascript
+// Capture screenshot
+const screenshot = await window.electronAPI.screenShare.captureScreenshot(sourceId);
+
+// Execute system commands (like Pandoc conversion)
+await window.electronAPI.file.executePandoc(inputFile, outputFile, fromFormat, toFormat);
+```
+
+These features enable agents to perform more complex tasks, such as document format conversion, screen analysis, etc.
+
+### Git Operations
+
+For developers, Git operations are an important part of daily work. Mo AI Studio allows agents to easily handle Git-related tasks:
+
+```javascript
+// Clone Git repository
+await window.electronAPI.file.cloneGitRepository(repoUrl, targetPath, progressCallback);
+
+// Undo Git commit
+await window.electronAPI.file.undoGitCommit();
+```
+
+This allows agents to assist with code version management, improving development efficiency.
+
+## Mo AI Studio vs Agents: Each Plays Its Role, Complementing Each Other
+
+It's important to understand the relationship between Mo AI Studio and agents. They are like the relationship between a stage and actors:
+
+- **Mo AI Studio (Stage)**: Provides running environment, system interfaces, and resource management. It's the platform for agents to showcase their abilities.
+- **Agents (Actors)**: Like Mo, they are AI programs running in Mo AI Studio. They utilize the capabilities provided by the platform to complete specific tasks.
+
+Mo AI Studio provides the "stage" and "props" for agents, while agents perform brilliantly on this stage, solving users' practical problems.
+
+## Conclusion
+
+Mo AI Studio is not just an environment for running agents; it's more of an empowering platform. By providing a rich system-level SDK, Mo AI Studio allows agents to interact with computer systems in unprecedented ways. This opens up infinite possibilities for AI applications, from simple file management to complex development assistance, agents can excel in all aspects.
+
+As Mo AI Studio continues to evolve, we look forward to seeing more innovative AI applications emerge. Whether you're a developer, researcher, or ordinary user, Mo AI Studio has opened a door to a new world of AI for you. Let's explore this future full of possibilities together!

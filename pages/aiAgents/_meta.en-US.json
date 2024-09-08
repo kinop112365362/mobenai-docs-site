@@ -1,0 +1,32 @@
+{
+  "base-model": {
+    "title": "Base Model"
+  },
+  "instruction": {
+    "title": "Instruction"
+  },
+  "constraint": {
+    "title": "Constraint"
+  },
+  "variable": {
+    "title": "Variable"
+  },
+  "output-processor": {
+    "title": "Output Processor"
+  },
+  "context-management": {
+    "title": "Context Management"
+  },
+  "api-integration": {
+    "title": "API Integration"
+  },
+  "temperature-setting": {
+    "title": "Temperature Setting"
+  },
+  "setters": {
+    "title": "Setters"
+  },
+  "custom-agent": {
+    "title": "Custom Agent"
+  }
+}

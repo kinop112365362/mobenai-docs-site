@@ -1,7 +1,7 @@
 {
   "index": "Introduction",
   "concepts": "Core Concepts",
-  "agents": "Agents",
+  "aiAgents": "Agents",
   "agentsContainer": "Agent Container",
   "custom-components": "Publish Custom Components",
   "about": {

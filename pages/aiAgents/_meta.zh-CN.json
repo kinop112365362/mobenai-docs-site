@@ -1,0 +1,32 @@
+{
+  "base-model": {
+    "title": "基座模型"
+  },
+  "instruction": {
+    "title": "指令"
+  },
+  "constraint": {
+    "title": "约束"
+  },
+  "variable": {
+    "title": "变量"
+  },
+  "output-processor": {
+    "title": "输出处理器"
+  },
+  "context-management": {
+    "title": "上下文管理"
+  },
+  "api-integration": {
+    "title": "API 集成"
+  },
+  "temperature-setting": {
+    "title": "温度设置"
+  },
+  "setters": {
+    "title": "设置器"
+  },
+  "custom-agent": {
+    "title": "自定义智能体"
+  }
+}
