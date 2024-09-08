@@ -1,0 +1,79 @@
+# Mo AI Studio 功能详解
+
+欢迎来到 Mo AI Studio 的功能详解页面！在这里，我们将深入探讨 Mo AI Studio 这个强大的桌面客户端，它不仅是智能体的运行环境，还提供了丰富的系统级 SDK，让智能体具备操作系统的能力。让我们一起揭开 Mo AI Studio 的神秘面纱，看看它如何改变我们与 AI 交互的方式！
+
+## Mo AI Studio：智能体的温床
+
+想象一下，如果你有一个神奇的工作室，可以让各种 AI 助手在里面自由发挥，那会是什么样子？Mo AI Studio 就是这样一个神奇的地方！它是一个专门为 AI 智能体打造的桌面客户端，就像是智能体的温室，为它们提供了最佳的生长环境。
+
+### 智能体运行环境
+
+Mo AI Studio 不仅仅是一个普通的应用程序，它更像是一个小型的 AI 生态系统。在这里，像 Mo 这样的智能体可以自由地运行、交互和发展。它为智能体提供了：
+
+1. **稳定的运行平台**：无论是简单的问答还是复杂的任务处理，Mo AI Studio 都能保证智能体流畅运行。
+2. **资源管理**：自动分配和管理计算资源，让智能体发挥最佳性能。
+3. **安全的沙箱环境**：智能体可以在受控的环境中执行操作，保证系统安全。
+
+## 系统级 SDK：赋予智能体超能力
+
+Mo AI Studio 最令人兴奋的特性之一，就是它提供的系统级 SDK。这就像是给智能体们配备了一套超级工具箱，让它们能够与操作系统进行深度交互。让我们看看这些"超能力"都包括什么：
+
+### 文件系统操作
+
+智能体可以像人类用户一样，自由地浏览、读写文件系统。例如：
+
+```javascript
+// 读取文件内容
+const content = await window.electronAPI.file.readFile('/path/to/file.txt');
+
+// 写入文件
+await window.electronAPI.file.writeFile('/path/to/newfile.txt', 'Hello, Mo AI Studio!');
+
+// 获取目录结构
+const structure = await window.electronAPI.file.getDirectoryStructure('/path/to/directory');
+```
+
+这些功能让智能体能够帮助用户管理文件、分析代码结构，甚至自动生成和修改文件。
+
+### 系统交互
+
+Mo AI Studio 允许智能体与操作系统进行更深层次的交互：
+
+```javascript
+// 获取屏幕截图
+const screenshot = await window.electronAPI.screenShare.captureScreenshot(sourceId);
+
+// 执行系统命令（如 Pandoc 转换）
+await window.electronAPI.file.executePandoc(inputFile, outputFile, fromFormat, toFormat);
+```
+
+这些功能使得智能体可以执行更复杂的任务，如文档格式转换、屏幕分析等。
+
+### Git 操作
+
+对于开发者来说，Git 操作是日常工作的重要部分。Mo AI Studio 让智能体也能轻松处理 Git 相关任务：
+
+```javascript
+// 克隆 Git 仓库
+await window.electronAPI.file.cloneGitRepository(repoUrl, targetPath, progressCallback);
+
+// 撤销 Git 提交
+await window.electronAPI.file.undoGitCommit();
+```
+
+这使得智能体可以协助代码版本管理，提高开发效率。
+
+## Mo AI Studio vs 智能体：各司其职，相得益彰
+
+理解 Mo AI Studio 和智能体之间的关系是很重要的。它们就像是舞台和演员的关系：
+
+- **Mo AI Studio（舞台）**：提供运行环境、系统接口和资源管理。它是智能体发挥能力的平台。
+- **智能体（演员）**：如 Mo，是在 Mo AI Studio 中运行的 AI 程序。它们利用平台提供的能力来完成特定任务。
+
+Mo AI Studio 为智能体提供了"舞台"和"道具"，而智能体则在这个舞台上精彩演出，解决用户的实际问题。
+
+## 结语
+
+Mo AI Studio 不仅仅是一个运行智能体的环境，它更是一个赋能的平台。通过提供丰富的系统级 SDK，Mo AI Studio 让智能体能够以前所未有的方式与计算机系统交互。这开启了 AI 应用的无限可能，从简单的文件管理到复杂的开发辅助，智能体都能大显身手。
+
+随着 Mo AI Studio 的不断发展，我们期待看到更多创新的 AI 应用诞生。无论你是开发者、研究人员还是普通用户，Mo AI Studio 都为你打开了一扇通向 AI 新世界的大门。让我们一起探索这个充满可能的未来吧！
