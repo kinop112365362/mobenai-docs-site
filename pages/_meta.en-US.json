@@ -1,15 +1,15 @@
 {
-  "index": "简介",
-  "concepts": "核心概念",
-  "agents": "智能体",
-  "agentsContainer": "智能体容器",
-  "custom-components": "发布自定义的一切",
+  "index": "Introduction",
+  "concepts": "Core Concepts",
+  "agents": "Agents",
+  "agentsContainer": "Agent Container",
+  "custom-components": "Publish Custom Components",
   "about": {
-    "title": "关于",
+    "title": "About",
     "type": "page"
   },
   "contact": {
-    "title": "官网 ↗",
+    "title": "Official Website ↗",
     "type": "page",
     "href": "https://www.mobenai.com.cn",
     "newWindow": true
