@@ -3,7 +3,7 @@
   "concepts": "核心概念",
   "aiAgents": "智能体",
   "agentsContainer": "智能体容器",
-  "custom-components": "发布自定义的一切",
+  "publish": "发布你的智能体",
   "about": {
     "title": "关于",
     "type": "page"

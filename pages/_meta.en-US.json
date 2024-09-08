@@ -3,7 +3,7 @@
   "concepts": "Core Concepts",
   "aiAgents": "Agents",
   "agentsContainer": "Agent Container",
-  "custom-components": "Publish Custom Components",
+  "publish": "Publish Your AI Agent",
   "about": {
     "title": "About",
     "type": "page"
