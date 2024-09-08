@@ -13,6 +13,10 @@ const config: DocsThemeConfig = {
   footer: {
     text: "Mo AI Studio 看见未来...",
   },
+  i18n: [
+    { locale: "en-US", text: "English" },
+    { locale: "zh-CN", text: "中文" },
+  ],
 }
 
 export default config
